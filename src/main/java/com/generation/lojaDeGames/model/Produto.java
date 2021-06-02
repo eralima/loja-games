@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,8 +23,10 @@ public class Produto {
 	@NotNull
 	private String nome;
 	
+	private String plataforma;
+	
 	@NotNull
-	private String marca;
+	private int classicacaoIndicativa; 
 	
 	@NotNull
 	@Digits(integer=3, fraction=2)
@@ -49,12 +52,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getMarca() {
-		return marca;
+	public String getPlataforma() {
+		return plataforma;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setPlataforma(String marca) {
+		this.plataforma = marca;
 	}
 
 	public double getPreco() {
@@ -71,6 +74,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public int getClassicacaoIndicativa() {
+		return classicacaoIndicativa;
+	}
+
+	public void setClassicacaoIndicativa(int classicacaoIndicativa) {
+		this.classicacaoIndicativa = classicacaoIndicativa;
 	}
 	
 	
